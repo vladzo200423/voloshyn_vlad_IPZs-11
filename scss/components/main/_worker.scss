@@ -1,0 +1,58 @@
+.worker {
+  text-align: center;
+  background-color: $ligh-gray;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 94px;
+  padding-top: 94px;
+  @include mobile {
+    padding: 60px 0;
+  }
+  @include tablet {
+    padding: 60px 0;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: nowrap;
+    @include tablet {
+      flex-wrap: wrap;
+    }
+    @include mobile {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__card {
+    background-color: $white;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+
+  &__img {
+    @include tablet {
+      width: 354px;
+      height: 374px;
+    }
+    @include mobile {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__info {
+    padding: 30px;
+  }
+
+  &__name {
+    @include font($main-color, 16px, 500, 0.48px);
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    @include font($third-color, 16px, 400, 0.48px);
+    margin: 0;
+  }
+}

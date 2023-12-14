@@ -1,0 +1,33 @@
+a,
+ul,
+body,
+h3,
+h2,
+p,
+li,
+svg {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $roboto_font;
+  font-style: normal;
+  line-height: normal;
+  font-size: 14px;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+a,
+address {
+  list-style: none;
+  text-decoration: none;
+  font-style: normal;
+}
+
+img {
+  display: block;
+}

@@ -1,0 +1,35 @@
+.button-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  @include mobile {
+    justify-content: normal;
+  }
+
+  &__list {
+    display: flex;
+    gap: 8px;
+    @include mobile {
+      flex-wrap: wrap;
+      max-width: 350px;
+      justify-content: normal;
+      row-gap: 15px;
+    }
+  }
+
+  &__filter {
+    @include button($ligh-gray, none);
+    @include font($main-color, 16px, 500, 0.48px, 26px);
+
+    padding: 6px 22px;
+    word-wrap: break-word;
+    transition: color ease 0.5s, background-color 0.5s;
+
+    &:hover,
+    &:focus {
+      background: $second-color;
+      color: white;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12);
+    }
+  }
+}

@@ -1,0 +1,101 @@
+.portfolio {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  @include mobile {
+    padding: 60px 0;
+  }
+  @include tablet {
+    padding: 60px 0;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    @include tablet {
+      gap: 24px;
+      justify-content: start;
+    }
+  }
+}
+.card {
+  max-width: 370px;
+  border: 1px solid #eee;
+  transition: box-shadow 0.5s;
+  @include tablet {
+    max-width: 345px;
+  }
+  @include mobile {
+    max-width: 450px;
+    max-height: 404px;
+    margin: 0px;
+  }
+  &:hover,
+  &:focus {
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  &__link {
+    &:hover .overlay,
+    &:focus .overlay {
+      transform: translateY(0);
+    }
+  }
+  &__img {
+    width: auto;
+    @include tablet {
+      max-width: 100%;
+    }
+    @include mobile {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__image-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    @include mobile {
+      width: 450px;
+      height: 294px;
+    }
+  }
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(101%);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+  opacity: 0.9;
+  transition-property: transform;
+  background-color: $second-color;
+  @include mobile {
+    transform: translateY(134%);
+  }
+
+  &__text {
+    @include font(white, 18px, 400, 0.54px, 28px);
+    padding: 64px 24px;
+    opacity: 0.9;
+    @include mobile {
+      padding: 77px 24px;
+    }
+  }
+}
+.card-text {
+  padding: 20px 24px;
+
+  &__title {
+    @include font($main-color, 18px, 700, 1.08px, 36px);
+  }
+
+  &__text {
+    @include font($third-color, 16px, 400, 0.48px, 30px);
+  }
+}

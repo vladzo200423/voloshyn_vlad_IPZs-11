@@ -1,0 +1,14 @@
+.logo {
+  @include font($main-color, 26px, 700, 0.78px);
+  font-family: $raleway_font;
+  &_blue {
+    color: $second-color;
+  }
+
+  &_black {
+    color: $black;
+  }
+  &_white {
+    color: $white;
+  }
+}

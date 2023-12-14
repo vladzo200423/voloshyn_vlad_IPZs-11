@@ -1,0 +1,187 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+.modal-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  min-width: 528px;
+  background-color: $white;
+  opacity: 1;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  @include tablet {
+    min-width: 450px;
+  }
+}
+
+.close-button {
+  display: flex;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  border-radius: 50%;
+  background-color: $white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    fill: $black;
+    transition: fill 0.5s;
+  }
+  &:hover .close-button__icon,
+  &:focus .close-button__icon {
+    fill: $second-color;
+  }
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  &__h2 {
+    @include font($main-color, 20px, 700, 0.6px);
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  &__label {
+    @include font($third-color, 12px, 400, 0.12px);
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    border: 1px #21212133 solid;
+    padding: 11px 0px 11px 30px;
+
+    &:hover,
+    &:focus {
+      outline: 1px $second-color solid;
+    }
+
+    &:focus + .form__icon,
+    &:hover + .form__icon {
+      transition: 300ms;
+      color: $second-color;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    color: $main-color;
+    fill: currentColor;
+    top: 28px;
+    left: 10px;
+  }
+
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__textarea {
+    @include font(black, 12px, 400, 0.12px);
+    height: 120px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px #21212133 solid;
+    padding: 11px 12px;
+    resize: none;
+
+    &:hover,
+    &:focus {
+      outline: 1px $second-color solid;
+    }
+  }
+
+  &__button-box {
+    display: inline-block;
+    text-align: center;
+  }
+
+  &__button {
+    @include font(white, 16px, 700, 0.96px, 30px);
+    @include button($second-color);
+    padding: 10px 52px;
+    &:hover,
+    &:focus {
+      background: $hover-color;
+    }
+  }
+}
+.checkbox {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  &__input {
+    appearance: none;
+    border: $main-color 1px solid;
+    height: 15px;
+    width: 16px;
+    border-radius: 2px;
+    transition-duration: 0.5s;
+
+    &:checked {
+      background: $second-color;
+      border: none;
+
+      &::before {
+        content: "✔";
+        color: white;
+        margin-left: 2px;
+      }
+    }
+  }
+  &__text {
+    @include font($third-color, 14px, 400, 0.42px, 24px);
+    @include tablet {
+      font-size: 12px;
+      white-space: nowrap;
+    }
+  }
+
+  &__link {
+    @include font($second-color, 14px, 400, 0.42px, 24px);
+    text-decoration: underline;
+    @include tablet {
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.social {
+  @include tablet {
+    text-align: center;
+  }
+  @include mobile {
+    text-align: center;
+  }
+  &__list {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+
+    &_g10 {
+      gap: 10px;
+    }
+  }
+
+  &__item {
+    height: 44px;
+    width: 44px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+
+    color: $icon-color;
+    fill: currentColor;
+    transition: color 0.5s, background-color 0.5s;
+
+    &_dark {
+      background: rgba(255, 255, 255, 0.1);
+      color: $white;
+      fill: currentColor;
+      transition: color 0.5s, background-color 0.5s;
+    }
+
+    &:hover,
+    &:focus {
+      color: $white;
+      fill: currentColor;
+      background-color: #188ce8;
+    }
+  }
+}
